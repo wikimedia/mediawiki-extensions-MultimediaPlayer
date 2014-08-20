@@ -7,6 +7,11 @@
  */
 class MultimediaPlayer {
 	/**
+	 * @var MultimediaPlayer
+	 */
+	protected static $instance;
+
+	/**
 	 * Sources to be loaded into the player
 	 *
 	 * @var array
@@ -26,6 +31,20 @@ class MultimediaPlayer {
 	 * @var MultimediaPlayerContainer
 	 */
 	private $multimediaPlayerContainer;
+
+	/**
+	 * Returns a Singleton of this MultimediaPlayer
+	 * This of course assumes a maximum of one player per page, which may change at some point.
+	 *
+	 * @return MultimediaPlayer
+	 */
+	public static function Singleton() {
+		static $instance = null;
+		if ( $instance === null ) {
+			$instance = new MultimediaPlayer();
+		}
+		return $instance;
+	}
 
 	public function getMultimediaPlayerSources() {
 		return $this->multimediaPlayerSources;

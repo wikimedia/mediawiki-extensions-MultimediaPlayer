@@ -7,7 +7,7 @@
  *
  * @ingroup Extensions
  * @author Ike Hecht
- * @version 0.3
+ * @version 0.3.1
  * @link https://www.mediawiki.org/wiki/Extension:MultimediaPlayer Documentation
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
@@ -20,7 +20,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'MultimediaPlayer',
-	'version' => '0.3',
+	'version' => '0.3.1',
 	'author' => 'Ike Hecht for [http://www.wikiworks.com/ WikiWorks]',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:MultimediaPlayer',
 	'descriptionmsg' => 'multimediaplayer-desc',
@@ -61,4 +61,3 @@ $wgMultimediaPlayerSources = array();
  */
 $wgMultimediaPlayerKnownSources = MultimediaPlayerSources::getDefaultSources();
 
-$wgMultimediaPlayer = new MultimediaPlayer();

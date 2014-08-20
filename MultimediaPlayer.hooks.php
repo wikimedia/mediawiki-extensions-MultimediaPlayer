@@ -23,7 +23,6 @@ class MultimediaPlayerHooks {
 	/**
 	 * Add a new MultimediaPlayerContainer to the player and return its output
 	 *
-	 * @global MultimediaPlayer $wgMultimediaPlayer
 	 * @param string $input
 	 * @param array $args
 	 * @param Parser $parser
@@ -31,8 +30,7 @@ class MultimediaPlayerHooks {
 	 * @return string HTML for this container
 	 */
 	public static function renderContainer( $input, array $args, Parser $parser, PPFrame $frame ) {
-		global $wgMultimediaPlayer;
-
+		$wgMultimediaPlayer = MultimediaPlayer::Singleton();
 		$wgMultimediaPlayer->setMultimediaPlayerContainer( new MultimediaPlayerContainer );
 		return $wgMultimediaPlayer->getContainerOutput();
 	}
@@ -40,7 +38,6 @@ class MultimediaPlayerHooks {
 	/**
 	 * Add a new MultimediaPlayerItem to the player and return its output
 	 *
-	 * @global MultimediaPlayer $wgMultimediaPlayer
 	 * @param Parser $parser
 	 * @param string $source Name of the source
 	 * @param string $id ID of this item - to replace the $1 in the source
@@ -48,7 +45,7 @@ class MultimediaPlayerHooks {
 	 * @return string HTML for this item
 	 */
 	public static function renderMultimediaItem( Parser $parser, $source = '', $id = '', $linkText = '' ) {
-		global $wgMultimediaPlayer;
+		$wgMultimediaPlayer = MultimediaPlayer::Singleton();
 		$output = $wgMultimediaPlayer->getMultimediaPlayerItemOutput( new MultimediaPlayerItem( $source,
 			$id, $linkText ) );
 		return array( $output, 'noparse' => true, 'isHTML' => true );
@@ -57,17 +54,17 @@ class MultimediaPlayerHooks {
 	/**
 	 * Inserts all the JavaScript & CSS
 	 *
-	 * @global MultimediaPlayer $wgMultimediaPlayer
 	 * @global array $wgMultimediaPlayerSources
 	 * @param OutputPage $out
 	 * @param Skin $skin
 	 * @return boolean
 	 */
 	public static function onBeforePageDisplay( OutputPage &$out, Skin &$skin ) {
-		global $wgMultimediaPlayer, $wgMultimediaPlayerSources;
+		global $wgMultimediaPlayerSources;
 
 		$out->addModules( 'ext.MultimediaPlayer' );
 
+		$wgMultimediaPlayer = MultimediaPlayer::Singleton();
 		$wgMultimediaPlayer->setMultimediaPlayerSources( $wgMultimediaPlayerSources );
 		$scripts = $wgMultimediaPlayer->getAllScripts();
 		foreach ( $scripts as $script ) {
