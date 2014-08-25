@@ -50,12 +50,12 @@ class MultimediaPlayer {
 		return $this->multimediaPlayerSources;
 	}
 
-	public function setMultimediaPlayerSources( $multimediaPlayerSources = '' ) {
-		if ( $multimediaPlayerSources == '' ) {
-			global $wgMultimediaPlayerSources;
-			$multimediaPlayerSources = $wgMultimediaPlayerSources;
-		}
 
+	/**
+	 * @param array $multimediaPlayerSources
+	 * @return array
+	 */
+	public function setMultimediaPlayerSources( $multimediaPlayerSources ) {
 		$multimediaPlayerSources = array_merge( $this->getKnownMultimediaPlayerSources(),
 			$multimediaPlayerSources );
 

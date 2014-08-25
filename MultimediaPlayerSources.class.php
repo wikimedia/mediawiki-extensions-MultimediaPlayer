@@ -63,7 +63,7 @@ class MultimediaPlayerSources {
 	 * @return string HTML of iframe
 	 */
 	public static function getDailyMotion() {
-		return self::getGenericVideo( 'http://www.dailymotion.com/embed/video/$1' );
+		return self::getGenericVideo( 'http://www.dailymotion.com/embed/video/$1?autoplay=1' );
 	}
 
 	/**
@@ -84,7 +84,7 @@ class MultimediaPlayerSources {
 	public static function getSoundCloud() {
 		return Html::element( 'iframe',
 				array(
-				'src' => 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$1',
+				'src' => 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/$1&auto_play=true',
 				'width' => '100%', 'scrolling' => 'no', 'frameborder' => 'no'
 				)
 		);
@@ -95,7 +95,7 @@ class MultimediaPlayerSources {
 	 * @return string HTML of iframe
 	 */
 	public static function getYouTube() {
-		return self::getGenericVideo( 'http://www.youtube.com/embed/$1' );
+		return self::getGenericVideo( 'http://www.youtube.com/embed/$1?autoplay=1' );
 	}
 
 	/**
@@ -103,7 +103,7 @@ class MultimediaPlayerSources {
 	 * @return string HTML of iframe
 	 */
 	public static function getVimeo() {
-		return self::getGenericVideo( 'http://player.vimeo.com/video/$1' );
+		return self::getGenericVideo( 'http://player.vimeo.com/video/$1?autoplay=1' );
 	}
 
 	/**
