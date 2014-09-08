@@ -112,6 +112,10 @@ END;
 	private function getLoadContainerFunction( $name, $code ) {
 		$frameID = MultimediaPlayerContainer::getFrameID();
 		$containerID = MultimediaPlayerContainer::getContainerID();
+
+		// strip newlines - otherwise jQuery is sad
+		$code = str_replace( array( "\r", "\n" ), '', $code );
+
 		/** @todo remove only the 'mm-...' class */
 		return <<<END
 function loadContainer{$name}(e) {
