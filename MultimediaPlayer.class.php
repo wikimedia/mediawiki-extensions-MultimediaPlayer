@@ -112,6 +112,7 @@ END;
 	private function getLoadContainerFunction( $name, $code ) {
 		$frameID = MultimediaPlayerContainer::getFrameID();
 		$containerID = MultimediaPlayerContainer::getContainerID();
+		$descriptionID = MultimediaPlayerContainer::getDescriptionID();
 
 		// strip newlines - otherwise jQuery is sad
 		$code = str_replace( array( "\r", "\n" ), '', $code );
@@ -120,9 +121,11 @@ END;
 		return <<<END
 function loadContainer{$name}(e) {
 	e.preventDefault();
+	$('#$descriptionID').remove();
 	$('#$frameID').removeClass();
 	$('#$frameID').addClass( 'mm-$name' );
 	$('#$containerID').html( '$code' );
+	$('#$containerID').after( '<div id="$descriptionID">' + $(this).text() + '</div>' );
 }
 END;
 	}

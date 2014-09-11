@@ -1,6 +1,12 @@
+#multimediaplayer-frame {
+	margin: 15px;
+}
 #multimediaplayer-container {
 	text-align: center;
-	margin: 20px;
+}
+#multimediaplayer-description {
+	margin-top: 5px;
+	text-align: center;
 }
 
 /* DailyMotion, Vimeo & YouTube */

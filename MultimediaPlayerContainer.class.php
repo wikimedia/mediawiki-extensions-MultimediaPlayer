@@ -19,6 +19,13 @@ class MultimediaPlayerContainer {
 	}
 
 	/**
+	 * @return string ID of the HTML element that contains the clicked item's linktext
+	 */
+	public static function getDescriptionID() {
+		return 'multimediaplayer-description';
+	}
+
+	/**
 	 * @return string HTML of the container to load with the player
 	 */
 	public function getOutput() {
