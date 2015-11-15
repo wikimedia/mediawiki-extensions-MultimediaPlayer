@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dinhxuanduyet"
+			"Dinhxuanduyet",
+			"Minh Nguyen"
 		]
 	},
-	"multimediaplayer-desc": "Chơi một danh sách các file đa phương tiện"
+	"multimediaplayer-desc": "Phát một danh sách các tập tin đa phương tiện"
 }
