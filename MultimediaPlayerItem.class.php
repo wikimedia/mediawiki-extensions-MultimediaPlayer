@@ -50,7 +50,7 @@ class MultimediaPlayerItem {
 	 */
 	public function setId( $id ) {
 		$id = self::getItemIdPrefix() . $id; //ID's can't begin with a number
-		$id = Sanitizer::escapeId( $id );
+		$id = Sanitizer::escapeIdForAttribute( $id );
 		return wfSetVar( $this->id, $id );
 	}
 
