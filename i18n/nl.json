@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Esketti"
+			"Esketti",
+			"Mainframe98"
 		]
 	},
-	"multimediaplayer-desc": "Speelt een lijst van multimedia bestanden"
+	"multimediaplayer-desc": "Speelt een lijst van multimedia bestanden af"
 }
