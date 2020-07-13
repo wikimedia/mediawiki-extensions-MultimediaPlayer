@@ -1,6 +1,8 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Ike Hecht"
+		]
 	},
 	"multimediaplayer-desc": "{{desc}}"
 }
