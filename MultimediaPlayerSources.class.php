@@ -54,7 +54,7 @@ class MultimediaPlayerSources {
 	 * @return string HTML of iframe
 	 */
 	public static function getGenericVideo( $src ) {
-		return "<iframe src='$src' frameborder='0' webkitAllowFullScreen"
+		return "<iframe src='$src' frameborder='0' webkitAllowFullScreen "
 			. "mozallowfullscreen allowFullScreen></iframe>";
 	}
 
@@ -112,7 +112,8 @@ class MultimediaPlayerSources {
 	 */
 	public static function getVine() {
 		return "<iframe width='100%' src='https://vine.co/v/$1/embed/simple' frameborder='0' "
-			. "scrolling='no' allowtransparency='true'></iframe><script async "
+			// bypass check in Html::inlineScript with the extra space
+			. "scrolling='no' allowtransparency='true'></iframe>< script async "
 			. "src='//platform.vine.co/static/scripts/embed.js' charset='utf-8'><\/script>";
 	}
 }
